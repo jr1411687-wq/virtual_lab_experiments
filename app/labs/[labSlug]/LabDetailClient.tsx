@@ -138,9 +138,24 @@ export default function LabDetailClient({ labSlug }: { labSlug: string }) {
             <div className="animate-fade-in">
               <h2 className="text-3xl font-serif text-[#0b5c9e] mb-6 border-b border-gray-200 pb-2">List of Experiments</h2>
               <ol className="list-decimal list-inside space-y-3 text-gray-700">
-                {currentLab.experiments ? currentLab.experiments.map((exp: string, i: number) => (
-                  <li key={i} className="leading-relaxed bg-gray-50 p-4 rounded border border-gray-200 text-md">{exp}</li>
-                )) : (
+                {currentLab.experiments ? currentLab.experiments.map((exp: any, i: number) => {
+                  const title = typeof exp === "string" ? exp : exp.title;
+                  const expSlug = typeof exp === "object" && exp.slug ? exp.slug : null;
+                  return (
+                    <li key={i} className="leading-relaxed bg-gray-50 p-4 rounded border border-gray-200 text-md list-item">
+                      {expSlug ? (
+                        <Link
+                          href={`/labs/${labSlug}/${expSlug}`}
+                          className="text-[#0b5c9e] font-medium hover:underline"
+                        >
+                          {title}
+                        </Link>
+                      ) : (
+                        title
+                      )}
+                    </li>
+                  );
+                }) : (
                   <li className="leading-relaxed bg-gray-50 p-4 rounded border border-gray-200 text-md">Experiment 1 details to be added...</li>
                 )}
               </ol>

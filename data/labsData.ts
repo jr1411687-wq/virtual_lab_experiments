@@ -48,7 +48,28 @@ export const allBranches = [
         history: "DSP became practical in the 1960s with the development of the Fast Fourier Transform (FFT) algorithm by Cooley and Tukey. Before this, the computational load was too heavy. Today, DSP is the backbone of everything from your smartphone's audio processing to advanced medical imaging.",
         image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop"
       },
-      { title: "Analog and Digital Communication", slug: "analog-digital-communication", shortName: "ADC", desc: "Explore modulation techniques, transmitters, receivers, and communication systems." },
+      {
+        title: "Analog and Digital Communication Systems",
+        slug: "analog-digital-communication",
+        shortName: "ADCS",
+        desc: "Explore modulation techniques, transmitters, receivers, and communication systems.",
+        overview:
+          "The Analog and Digital Communication Systems (ADCS) lab covers amplitude and angle modulation, transmitters, receivers, and related measurement techniques using virtual instruments and interactive simulations.",
+        objectives: [
+          "Generate and observe DSB AM waveforms on a virtual CRO.",
+          "Measure Vmax and Vmin and calculate the modulation index.",
+          "Study the effect of modulating signal amplitude, including overmodulation.",
+          "Relate block-diagram stages of an AM transmitter to observed test-point waveforms.",
+        ],
+        experiments: [
+          {
+            title: "Create the DSB AM wave on a CRO and determine its modulation index",
+            slug: "exp-1-dsb-am",
+          },
+        ],
+        history:
+          "Amplitude modulation was the first practical radio modulation method. Early AM transmitters used vacuum-tube modulators; later solid-state kits (such as ST 2201 style trainers) made envelope and modulation-index measurements a standard undergraduate experiment.",
+      },
       { title: "Digital Electronics (DE)", slug: "digital-electronics", shortName: "DE", desc: "Study logic gates, flip-flops, counters, and sequential circuit design." },
       { title: "Basic Electronics (BE)", slug: "basic-electronics", shortName: "BE", desc: "Fundamental concepts of semiconductor diodes, transistors, and basic electronic circuits." },
       { title: "Analog and Digital Circuits", slug: "analog-digital-circuits", shortName: "ADC", desc: "Hands-on experiments with analog/digital ICs and complex circuit design." },
